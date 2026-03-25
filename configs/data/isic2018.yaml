@@ -1,0 +1,6 @@
+DATA:
+  NAME: isic2018
+  IMG_SIZE: 224
+
+MODEL:
+  NUM_CLASSES: 7

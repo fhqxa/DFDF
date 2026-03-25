@@ -1,0 +1,6 @@
+DATA:
+  NAME: covid19
+  IMG_SIZE: 224
+
+MODEL:
+  NUM_CLASSES: 2

@@ -1,0 +1,37 @@
+MODEL:
+  NAME: DFF_S
+  NUM_SEGMENT: 1
+
+TRAIN:
+  EPOCHS: 20
+  BATCH_SIZE: 64
+  DEVICE: cuda:0
+  AMP: true
+  STRATEGY: consist-1.0 # "consist-1.0", "cos", "warmup", "linear"
+
+OPTIMIZER:
+  NAME: AdamW
+  LR: 1e-4
+  WEIGHT_DECAY: 1e-2
+
+SCHEDULER:
+  NAME: cosine
+
+LOSS:
+  CLS:
+    NAME: LA        # CE | Focal | LDAM | CB | GRW | LA | LADE
+    SCALE: 30
+  SEG:
+    NAME: Dice
+    DICE_WEIGHT: 1.0
+    CE_WEIGHT: 1.0
+
+TASK_WEIGHT:
+  START_EPOCH: 0
+  END_EPOCH: 100
+
+TEST:
+  DO_TEST: true
+  INTERVAL: 1
+
+
